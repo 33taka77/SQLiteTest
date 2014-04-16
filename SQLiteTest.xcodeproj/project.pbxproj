@@ -22,6 +22,16 @@
 		8172216718FDFEEA0061902F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8172214618FDFEEA0061902F /* UIKit.framework */; };
 		8172216F18FDFEEA0061902F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8172216D18FDFEEA0061902F /* InfoPlist.strings */; };
 		8172217118FDFEEA0061902F /* SQLiteTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172217018FDFEEA0061902F /* SQLiteTestTests.m */; };
+		8172217B18FDFF2E0061902F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8172217A18FDFF2E0061902F /* libsqlite3.0.dylib */; };
+		8172218818FDFFC90061902F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172217F18FDFFC90061902F /* FMDatabase.m */; };
+		8172218918FDFFC90061902F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172218118FDFFC90061902F /* FMResultSet.m */; };
+		8172218A18FDFFC90061902F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172218318FDFFC90061902F /* FMDatabaseQueue.m */; };
+		8172218B18FDFFC90061902F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172218518FDFFC90061902F /* FMDatabaseAdditions.m */; };
+		8172218C18FDFFC90061902F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172218718FDFFC90061902F /* FMDatabasePool.m */; };
+		8172219018FE0AF80061902F /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172218E18FE0AF80061902F /* AssetManager.m */; };
+		8172219418FE0B530061902F /* AssetGroupData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172219318FE0B530061902F /* AssetGroupData.m */; };
+		8172219718FE0CB20061902F /* SQLiteMngr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172219618FE0CB20061902F /* SQLiteMngr.m */; };
+		8172219A18FE10340061902F /* NSError+DBError.m in Sources */ = {isa = PBXBuildFile; fileRef = 8172219918FE10340061902F /* NSError+DBError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +65,26 @@
 		8172216C18FDFEEA0061902F /* SQLiteTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SQLiteTestTests-Info.plist"; sourceTree = "<group>"; };
 		8172216E18FDFEEA0061902F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8172217018FDFEEA0061902F /* SQLiteTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLiteTestTests.m; sourceTree = "<group>"; };
+		8172217A18FDFF2E0061902F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		8172217D18FDFFC90061902F /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8172217E18FDFFC90061902F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8172217F18FDFFC90061902F /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		8172218018FDFFC90061902F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8172218118FDFFC90061902F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		8172218218FDFFC90061902F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8172218318FDFFC90061902F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8172218418FDFFC90061902F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		8172218518FDFFC90061902F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		8172218618FDFFC90061902F /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		8172218718FDFFC90061902F /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8172218E18FE0AF80061902F /* AssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetManager.m; sourceTree = "<group>"; };
+		8172219118FE0B250061902F /* AssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
+		8172219218FE0B530061902F /* AssetGroupData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetGroupData.h; sourceTree = "<group>"; };
+		8172219318FE0B530061902F /* AssetGroupData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetGroupData.m; sourceTree = "<group>"; };
+		8172219518FE0CB20061902F /* SQLiteMngr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteMngr.h; sourceTree = "<group>"; };
+		8172219618FE0CB20061902F /* SQLiteMngr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteMngr.m; sourceTree = "<group>"; };
+		8172219818FE10340061902F /* NSError+DBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+DBError.h"; sourceTree = "<group>"; };
+		8172219918FE10340061902F /* NSError+DBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+DBError.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8172217B18FDFF2E0061902F /* libsqlite3.0.dylib in Frameworks */,
 				8172214518FDFEEA0061902F /* CoreGraphics.framework in Frameworks */,
 				8172214718FDFEEA0061902F /* UIKit.framework in Frameworks */,
 				8172214318FDFEEA0061902F /* Foundation.framework in Frameworks */,
@@ -84,6 +115,7 @@
 		8172213618FDFEEA0061902F = {
 			isa = PBXGroup;
 			children = (
+				8172217C18FDFFB40061902F /* FMDB */,
 				8172214818FDFEEA0061902F /* SQLiteTest */,
 				8172216A18FDFEEA0061902F /* SQLiteTestTests */,
 				8172214118FDFEEA0061902F /* Frameworks */,
@@ -103,6 +135,7 @@
 		8172214118FDFEEA0061902F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8172217A18FDFF2E0061902F /* libsqlite3.0.dylib */,
 				8172214218FDFEEA0061902F /* Foundation.framework */,
 				8172214418FDFEEA0061902F /* CoreGraphics.framework */,
 				8172214618FDFEEA0061902F /* UIKit.framework */,
@@ -114,6 +147,10 @@
 		8172214818FDFEEA0061902F /* SQLiteTest */ = {
 			isa = PBXGroup;
 			children = (
+				8172219218FE0B530061902F /* AssetGroupData.h */,
+				8172219318FE0B530061902F /* AssetGroupData.m */,
+				8172219118FE0B250061902F /* AssetManager.h */,
+				8172218E18FE0AF80061902F /* AssetManager.m */,
 				8172215118FDFEEA0061902F /* AppDelegate.h */,
 				8172215218FDFEEA0061902F /* AppDelegate.m */,
 				8172215418FDFEEA0061902F /* Main_iPhone.storyboard */,
@@ -122,6 +159,10 @@
 				8172215B18FDFEEA0061902F /* ViewController.m */,
 				8172215D18FDFEEA0061902F /* Images.xcassets */,
 				8172214918FDFEEA0061902F /* Supporting Files */,
+				8172219518FE0CB20061902F /* SQLiteMngr.h */,
+				8172219618FE0CB20061902F /* SQLiteMngr.m */,
+				8172219818FE10340061902F /* NSError+DBError.h */,
+				8172219918FE10340061902F /* NSError+DBError.m */,
 			);
 			path = SQLiteTest;
 			sourceTree = "<group>";
@@ -153,6 +194,24 @@
 				8172216D18FDFEEA0061902F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8172217C18FDFFB40061902F /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				8172217D18FDFFC90061902F /* FMDB.h */,
+				8172217E18FDFFC90061902F /* FMDatabase.h */,
+				8172217F18FDFFC90061902F /* FMDatabase.m */,
+				8172218018FDFFC90061902F /* FMResultSet.h */,
+				8172218118FDFFC90061902F /* FMResultSet.m */,
+				8172218218FDFFC90061902F /* FMDatabaseQueue.h */,
+				8172218318FDFFC90061902F /* FMDatabaseQueue.m */,
+				8172218418FDFFC90061902F /* FMDatabaseAdditions.h */,
+				8172218518FDFFC90061902F /* FMDatabaseAdditions.m */,
+				8172218618FDFFC90061902F /* FMDatabasePool.h */,
+				8172218718FDFFC90061902F /* FMDatabasePool.m */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +315,15 @@
 				8172215C18FDFEEA0061902F /* ViewController.m in Sources */,
 				8172215318FDFEEA0061902F /* AppDelegate.m in Sources */,
 				8172214F18FDFEEA0061902F /* main.m in Sources */,
+				8172218818FDFFC90061902F /* FMDatabase.m in Sources */,
+				8172218918FDFFC90061902F /* FMResultSet.m in Sources */,
+				8172219018FE0AF80061902F /* AssetManager.m in Sources */,
+				8172219718FE0CB20061902F /* SQLiteMngr.m in Sources */,
+				8172218C18FDFFC90061902F /* FMDatabasePool.m in Sources */,
+				8172218B18FDFFC90061902F /* FMDatabaseAdditions.m in Sources */,
+				8172219418FE0B530061902F /* AssetGroupData.m in Sources */,
+				8172219A18FE10340061902F /* NSError+DBError.m in Sources */,
+				8172218A18FDFFC90061902F /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
