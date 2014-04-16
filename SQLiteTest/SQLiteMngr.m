@@ -28,11 +28,15 @@
     NSError* error;
     if( fileExists == NO ){
         NSLog(@"File is not exist.");
-        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath]stringByAppendingPathComponent:dbFileName];
-        ret = [fileManager copyItemAtPath:defaultDBPath toPath:deFilePath error:&error];
-        if(!ret){
+        //NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath]stringByAppendingPathComponent:dbFileName];
+        //ret = [fileManager copyItemAtPath:defaultDBPath toPath:deFilePath error:&error];
+        //if(!ret){
             // コピー失敗
             // 本当はエラー処理
+        //}
+        ret = [fileManager createFileAtPath:deFilePath contents:nil attributes:nil];
+        if (!ret) {
+            NSLog(@"createFileAtPath error File is not exist.");
         }
     }else{
         NSLog(@"File is exist.");
@@ -68,17 +72,18 @@
 - (void)createTable:(NSString*)tableName columns:(NSArray*)params
 {
     _tableName = tableName;
-    NSMutableString* sql = [NSMutableString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (id INTEGER PRIMARY KEY AUTOINCREMENT ",tableName ];
+    NSMutableString* sql = [NSMutableString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (",tableName ];
     for( NSDictionary* param in params ){
         NSString* columnName = [param valueForKey:@"name"];
         NSString* type = [param valueForKey:@"type"];
         [sql appendFormat:@"%@ %@, ",columnName, type];
     }
     NSMutableString *str = [NSMutableString stringWithString:[sql substringToIndex:(sql.length-2)]];
-    [str appendString:@")"];
+    [str appendString:@");"];
     NSLog(@"sql = %@",str);
-    [_db open];
-    [_db executeUpdate:str];
+    BOOL ret = [_db open];
+    //str = [NSMutableString stringWithString: @"CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);"];
+    ret = [_db executeUpdate:str];
     [_db close];
 }
 
@@ -94,10 +99,22 @@
 //          {"name":"nameString", "type:"double", "value":val}
 //      ]
 // ]
+
+- (void)insert
+{
+    BOOL ret;
+    ret = [_db open];
+    NSString* sql = [NSString stringWithFormat:@"insert into %@ values (?,?)",_tableName];
+    ret = [_db executeUpdate:sql,@"aizawa",[NSNumber numberWithInt:5]];
+    ret = [_db close];
+    NSLog(@"%d",ret);
+}
+
 - (void)insertDbWithObjects:(NSArray*)objects
 {
-    [_db open];
-    [_db beginTransaction];
+    BOOL ret;
+    ret = [_db open];
+    //ret = [_db beginTransaction];
     for( NSArray* obj in objects ){
         NSMutableString* sql = [NSMutableString stringWithFormat:@"insert into %@ (",_tableName ];
         for( NSDictionary* column in obj ){
@@ -116,7 +133,10 @@
                 [_db executeUpdate:strSql,[obj[0] valueForKey:@"value" ]];
                 break;
             case 2:
-                [_db executeUpdate:strSql,[obj[0] valueForKey:@"value" ],[obj[1] valueForKey:@"value" ]];
+                //NSDictionary* dict = (NSDictionary* )(obj[0]);
+                //NSString* nameString = (NSString*)[obj[0] valueForKey:@"value" ];
+                //NSNumber* num =[obj[1] valueForKey:@"value" ];
+                ret = [_db executeUpdate:strSql,[obj[0] valueForKey:@"value" ],[obj[1] valueForKey:@"value" ]];
                 break;
             case 3:
                 [_db executeUpdate:strSql,[obj[0] valueForKey:@"value" ],[obj[1] valueForKey:@"value" ],[obj[2] valueForKey:@"value" ]];
@@ -177,13 +197,16 @@
                 break;
         }
     }
-    [_db commit];
-    [_db close];
+    //ret = [_db commit];
+    ret = [_db close];
+    NSLog(@"%d",ret);
 }
 
 - (FMResultSet*)selectBy:(NSString*)selectString
 {
+    [_db open];
     FMResultSet* results = [_db executeQuery:selectString];
+    [_db close];
     return results;
 }
 

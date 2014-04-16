@@ -23,7 +23,7 @@
     [_sqlMngr prepareDBWithDBName:@"test.db"];
 
     NSArray *array = @[@{@"name":@"clm1", @"type":@"TEXT"},@{@"name":@"clm2",@"type":@"INTEGER"}];
-    [_sqlMngr createTable:@"testTbl" columns:array];
+    [_sqlMngr createTable:@"test2Tbl" columns:array];
     
     NSDictionary* param1 = @{@"name":@"clm1", @"type":@"TEXT", @"value":@"aizawa"};
     NSDictionary* param2 = @{@"name":@"clm2", @"type":@"integer", @"value":[NSNumber numberWithInt:5]};
@@ -33,13 +33,21 @@
     NSDictionary* param4 = @{@"name":@"clm2", @"type":@"integer", @"value":[NSNumber numberWithInt:3]};
     NSArray* params2 = @[param3,param4];
     
-    NSDictionary* param5 = @{@"name":@"clm1", @"type":@"TEXT", @"value":@"sato"};
-    NSDictionary* param6 = @{@"name":@"clm2", @"type":@"integer", @"value":[NSNumber numberWithInt:3]};
+    NSDictionary* param5 = @{@"name":@"clm1", @"type":@"TEXT", @"value":@"tanaka"};
+    NSDictionary* param6 = @{@"name":@"clm2", @"type":@"integer", @"value":[NSNumber numberWithInt:1]};
     NSArray* params3 = @[param5,param6];
 
     NSArray* columns = @[params1,params2,params3];
-    [_sqlMngr insertDbWithObjects:columns];
-
+    //[_sqlMngr insertDbWithObjects:columns];
+    
+    [_sqlMngr insert];
+    FMResultSet* result = [_sqlMngr selectBy:@"SELECT * FROM test2Tbl;"];
+    while( [result next] ){
+        int i = [result columnCount];
+        int num = [result intForColumn:@"id"];
+        NSLog(@"num(%d)",num);
+    }
+     
 }
 
 - (void)didReceiveMemoryWarning

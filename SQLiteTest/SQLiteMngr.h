@@ -16,5 +16,6 @@
 - (void)createTable:(NSString*)tableName columns:(NSArray*)params;
 - (void)insertDbWithObjects:(NSArray*)objects;
 - (FMResultSet*)selectBy:(NSString*)selectString;
+- (void)insert;
 
 @end
